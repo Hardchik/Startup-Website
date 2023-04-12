@@ -396,7 +396,7 @@ import {
       // ],
     },
     {
-      label: 'RESOURCES',
+      label: 'Resources',
       children: [
         {
           label: 'Job Board',
@@ -411,12 +411,12 @@ import {
       ],
     },
     {
-      label: 'AboutUs',
+      label: 'About',
       href: 'About',
     },
   
     {
-      label: 'ContactUs',
+      label: 'Contact',
       href: 'Contact',
     },
   ];
