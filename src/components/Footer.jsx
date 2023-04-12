@@ -41,7 +41,7 @@ import {
   }) => {
     return (
       <chakra.button
-        bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+        bg={'blackAlpha.100'}
         rounded={'full'}
         w={8}
         h={8}
@@ -64,8 +64,8 @@ import {
   export default function Footer() {
     return (
       <Box
-        bg={useColorModeValue('gray.50', 'gray.900')}
-        color={useColorModeValue('gray.700', 'gray.200')}>
+        bg={'#9AD7F3'}
+        color={'gray.500'}>
         <Container
           as={Stack}
           maxW={'6xl'}

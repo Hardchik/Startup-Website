@@ -34,7 +34,7 @@ export default function contact() {
     <>
   
   {/* <Contactpart1/> */}
-    <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
+    <Container bg="white" maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
         <Box
           bg="#02054B"

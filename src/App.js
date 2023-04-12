@@ -7,22 +7,21 @@ import About from './pages/About';
 import Footer from './components/Footer.jsx';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import Login from './pages/Login'
 
 function App() {
   return (
     <ChakraProvider>
-      <Header />
       <BrowserRouter>
         <Routes>
-          <Route path='/home' element={<Home />}></Route>
+          <Route path='/home' element={<><Header /><Home /><Footer/></>}></Route>
           {/* <Route path='/dashboard' element={<Dashboard />}></Route> */}
-          {/* <Route path='/login' element={<Login />}></Route> */}
+          <Route path='/signin' element={<><Header /><Login /></>}></Route>
           {/* <Route path='/resources' element={<Resources />}></Route> */}
-          <Route path='/contact' element={<Contact />}></Route>
-          <Route path='/about' element={<About />}></Route>
+          <Route path='/contact' element={<><Header /><Contact /><Footer/></>}></Route>
+          <Route path='/about' element={<><Header /><About /><Footer/></>}></Route>
         </Routes>
       </BrowserRouter>
-      <Footer/>
     </ChakraProvider>
   )
 }

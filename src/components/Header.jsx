@@ -5,6 +5,7 @@ import {
     IconButton,
     Button,
     Stack,
+    VStack,
     Collapse,
     Icon,
     Link,
@@ -24,6 +25,13 @@ import {
     ChevronRightIcon,
   } from '@chakra-ui/icons';
 
+  import {BiHome} from 'react-icons/bi'
+  import {MdDashboard} from 'react-icons/md'
+  import {GrContact} from 'react-icons/gr'
+  import {HiOutlineNewspaper} from 'react-icons/hi'
+  import { useNavigate, useLocation } from "react-router-dom";
+  import { useEffect, useState } from 'react';
+ 
   import Home from './../pages/Home';
   // import About from './../pages/About';
   // import Contact from './../pages/Contact';
@@ -31,43 +39,112 @@ import {
 
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
+    const [loginRoute, setLoginRoute] = useState(false);
     const [window] = useMediaQuery('(max-width: 780px)');
+    const navigate = useNavigate();
+    const SignInHandler = () => {
+      navigate("/signin");
+    }
+
+
+    const location = useLocation();
+    useEffect(()=> {
+      if(location.pathname==='/signin' || location.pathname === '/signup') {
+        setLoginRoute(true)
+      }
+    }, [location]);
+
 
     return (
       <>
       {window?(<>
-        <Stack w={'100vw'} p={5} bottom={0} left={0} opacity={0.4} bgColor={'gray.400'} color={'black'} position={'fixed'}>
-          <HStack justify={'space-evenly'}>
-            <Stack>
-              <Link href={'/home'}>
-              <></>
-              <Text>Home</Text>
-              </Link>
-            </Stack>
-            <Stack>
-              <Link href={'/dashboard'}>
-                <></>
-                <Text>Dashboard</Text>
-              </Link>
-            </Stack>
-            <Stack>
-              <Link href={'/about'}>
-                <></>
-                <Text>About</Text>
-              </Link>
-            </Stack>
-            <Stack>
-              <Link href={'/contact'}> 
-                <></>
-                <Text>Contact</Text>
-              </Link>
-            </Stack>
-          </HStack>
-        </Stack>
-      </>):(
+        
         <Box>
           <Flex
-            bg={'white'}
+            bg={'#9AD7F3'}
+            color={'gray.600'}
+            minH={'60px'}
+            py={{ base: 2 }}
+            px={{ base: 4 }}
+            borderBottom={1}
+            borderStyle={'solid'}
+            borderColor={'gray.200'}
+            align={'center'}>
+            <Flex flex={{ base: 1 }} justify={{ base: 'start', md: 'start' }}>
+              <Link href={'/home'} _hover={{textDecoration:'none'}}>
+                <Text
+                  textAlign={{ base: 'left', md: 'left' }}
+                  fontFamily={'heading'}
+                  color={'gray.800'}>
+                  Logo
+                </Text>
+              </Link>
+            </Flex>
+            <Stack
+              display={loginRoute?'none':'flex'}
+              flex={{ base: 1, md: 0 }}
+              justify={'flex-end'}
+              direction={'row'}
+              spacing={6}>
+              <Button
+                as={'a'}
+                fontSize={'sm'}
+                fontWeight={400}
+                variant={'link'}
+                href={'#'}
+                onClick={SignInHandler}>
+                Sign In
+              </Button>
+              <Button
+                as={'a'}
+                display={{ base: 'none', md: 'inline-flex' }}
+                fontSize={'sm'}
+                fontWeight={600}
+                color={'white'}
+                bg={'pink.400'}
+                href={'#'}
+                _hover={{
+                  bg: 'pink.300',
+                }}>
+                Sign Up
+              </Button>
+            </Stack>
+          </Flex>
+        </Box>
+        
+
+        <Stack display={loginRoute?'none':'flex'} w={'100vw'} p={5} bottom={0} left={0} opacity={0.7} bgColor={'gray.300'} color={'black'} position={'fixed'}>
+          <HStack justify={'space-evenly'}>
+          <Link _hover={{textDecoration:'none'}} href={'/home'}>
+              <VStack alignContent={'center'}>
+                <BiHome fontSize={'150%'} />
+                <Text fontSize={'70%'}>Home</Text>
+              </VStack>
+            </Link>
+            <Link _hover={{textDecoration:'none'}} href={'/dashboard'}>
+              <VStack>
+                <MdDashboard fontSize={'150%'} />
+                <Text fontSize={'70%'}>Dashboard</Text>
+              </VStack>
+            </Link>
+            <Link _hover={{textDecoration:'none'}} href={'/about'}>
+            <VStack>
+                <HiOutlineNewspaper fontSize={'150%'}/>
+                <Text fontSize={'70%'}>About</Text>
+              </VStack>
+            </Link>
+            <Link _hover={{textDecoration:'none'}} href={'/contact'}> 
+              <VStack>
+                <GrContact fontSize={'150%'} />
+                <Text fontSize={'70%'}>Contact</Text>
+              </VStack>
+            </Link>
+          </HStack>
+        </Stack>
+      </>):(<>
+        <Box>
+          <Flex
+            bg={'#9AD7F3'}
             color={'gray.600'}
             minH={'60px'}
             py={{ base: 2 }}
@@ -98,12 +175,15 @@ import {
                   Logo
                 </Text>
               </Link>
+              <Flex display={loginRoute?'none':'block'}>
               <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
                 <DesktopNav />
+              </Flex>
               </Flex>
             </Flex>
     
             <Stack
+              display={loginRoute?'none':'flex'}
               flex={{ base: 1, md: 0 }}
               justify={'flex-end'}
               direction={'row'}
@@ -113,7 +193,8 @@ import {
                 fontSize={'sm'}
                 fontWeight={400}
                 variant={'link'}
-                href={'#'}>
+                href={'#'}
+                onClick={SignInHandler}>
                 Sign In
               </Button>
               <Button
@@ -121,8 +202,8 @@ import {
                 display={{ base: 'none', md: 'inline-flex' }}
                 fontSize={'sm'}
                 fontWeight={600}
-                color={'white'}
-                bg={'pink.400'}
+                color={'gray.500'}
+                bg={'white'}
                 href={'#'}
                 _hover={{
                   bg: 'pink.300',
@@ -136,7 +217,7 @@ import {
             <MobileNav />
           </Collapse>
         </Box>
-      )}
+      </>)}
       </>
     );
   }
