@@ -8,6 +8,7 @@ import Footer from './components/Footer.jsx';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Login from './pages/Login'
+import SignUp from './pages/SignUp'
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route path='/home' element={<><Header /><Home /><Footer/></>}></Route>
           {/* <Route path='/dashboard' element={<Dashboard />}></Route> */}
           <Route path='/signin' element={<><Header /><Login /></>}></Route>
+          <Route path='/password' element={<><Header /><Login /></>}></Route>
+          <Route path='/signup' element={<><Header /><SignUp /></>}></Route>
           {/* <Route path='/resources' element={<Resources />}></Route> */}
           <Route path='/contact' element={<><Header /><Contact /><Footer/></>}></Route>
           <Route path='/about' element={<><Header /><About /><Footer/></>}></Route>

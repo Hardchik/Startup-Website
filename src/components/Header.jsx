@@ -46,10 +46,13 @@ import {
       navigate("/signin");
     }
 
+    const SignUpHandler = () => {
+      navigate("/signup");
+    }
 
     const location = useLocation();
     useEffect(()=> {
-      if(location.pathname==='/signin' || location.pathname === '/signup') {
+      if(location.pathname==='/signin' || location.pathname === '/signup' || location.pathname === '/password') {
         setLoginRoute(true)
       }
     }, [location]);
@@ -105,7 +108,8 @@ import {
                 href={'#'}
                 _hover={{
                   bg: 'pink.300',
-                }}>
+                }}
+                onClick={SignUpHandler}>
                 Sign Up
               </Button>
             </Stack>
@@ -207,7 +211,8 @@ import {
                 href={'#'}
                 _hover={{
                   bg: 'pink.300',
-                }}>
+                }}
+                onClick={SignUpHandler}>
                 Sign Up
               </Button>
             </Stack>
