@@ -21,7 +21,12 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-  
+
+  import Home from './../pages/Home';
+  import About from './../pages/About';
+  import Contact from './../pages/Contact';
+
+
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
   
@@ -54,7 +59,10 @@ import {
             <Text
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
-              color={useColorModeValue('gray.800', 'white')}>
+              color={useColorModeValue('gray.800', 'white')}
+              url={Home}
+              cursor={'pointer'}
+              >
               Logo
             </Text>
   
@@ -252,22 +260,23 @@ import {
   
   const NAV_ITEMS: Array<NavItem> = [
     {
-      label: 'Inspiration',
-      children: [
-        {
-          label: 'Explore Design Work',
-          subLabel: 'Trending Design to inspire you',
-          href: '#',
-        },
-        {
-          label: 'New & Noteworthy',
-          subLabel: 'Up-and-coming Designers',
-          href: '#',
-        },
-      ],
+      label: 'Home',
+      href: 'home',
+      // children: [
+      //   {
+      //     label: 'Explore Design Work',
+      //     subLabel: 'Trending Design to inspire you',
+      //     href: '#',
+      //   },
+      //   {
+      //     label: 'New & Noteworthy',
+      //     subLabel: 'Up-and-coming Designers',
+      //     href: '#',
+      //   },
+      // ],
     },
     {
-      label: 'Find Work',
+      label: 'RESOURCES',
       children: [
         {
           label: 'Job Board',
@@ -282,11 +291,12 @@ import {
       ],
     },
     {
-      label: 'Learn Design',
-      href: '#',
+      label: 'AboutUs',
+      href: 'About',
     },
+  
     {
-      label: 'Hire Designers',
-      href: '#',
+      label: 'ContactUs',
+      href: 'Contact',
     },
   ];
