@@ -9,10 +9,11 @@ import {
     Icon,
     Link,
     Popover,
+    HStack,
     PopoverTrigger,
     PopoverContent,
     useColorModeValue,
-    useBreakpointValue,
+    // useBreakpointValue,
     useDisclosure,
     useMediaQuery
   } from '@chakra-ui/react';
@@ -24,8 +25,8 @@ import {
   } from '@chakra-ui/icons';
 
   import Home from './../pages/Home';
-  import About from './../pages/About';
-  import Contact from './../pages/Contact';
+  // import About from './../pages/About';
+  // import Contact from './../pages/Contact';
 
 
   export default function WithSubnavigation() {
@@ -34,17 +35,46 @@ import {
 
     return (
       <>
-      {window?(<></>):(
+      {window?(<>
+        <Stack w={'100vw'} p={5} bottom={0} left={0} opacity={0.4} bgColor={'gray.400'} color={'black'} position={'fixed'}>
+          <HStack justify={'space-evenly'}>
+            <Stack>
+              <Link href={'/home'}>
+              <></>
+              <Text>Home</Text>
+              </Link>
+            </Stack>
+            <Stack>
+              <Link href={'/dashboard'}>
+                <></>
+                <Text>Dashboard</Text>
+              </Link>
+            </Stack>
+            <Stack>
+              <Link href={'/about'}>
+                <></>
+                <Text>About</Text>
+              </Link>
+            </Stack>
+            <Stack>
+              <Link href={'/contact'}> 
+                <></>
+                <Text>Contact</Text>
+              </Link>
+            </Stack>
+          </HStack>
+        </Stack>
+      </>):(
         <Box>
           <Flex
-            bg={useColorModeValue('white', 'gray.800')}
-            color={useColorModeValue('gray.600', 'white')}
+            bg={'white'}
+            color={'gray.600'}
             minH={'60px'}
             py={{ base: 2 }}
             px={{ base: 4 }}
             borderBottom={1}
             borderStyle={'solid'}
-            borderColor={useColorModeValue('gray.200', 'gray.900')}
+            borderColor={'gray.200'}
             align={'center'}>
             <Flex
               flex={{ base: 1, md: 'auto' }}
@@ -60,13 +90,14 @@ import {
               />
             </Flex>
             <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-              <Text
-                textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-                fontFamily={'heading'}
-                color={useColorModeValue('gray.800', 'white')}>
-                Logo
-              </Text>
-    
+              <Link href={'/home'} _hover={{textDecoration:'none'}}>
+                <Text
+                  textAlign={{ base: 'center', md: 'left' }}
+                  fontFamily={'heading'}
+                  color={'gray.800'}>
+                  Logo
+                </Text>
+              </Link>
               <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
                 <DesktopNav />
               </Flex>
