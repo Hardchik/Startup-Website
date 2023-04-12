@@ -24,6 +24,7 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+  import { NavLink} from 'react-router-dom'
 
   import {BiHome} from 'react-icons/bi'
   import {MdDashboard} from 'react-icons/md'
@@ -170,7 +171,7 @@ import {
                 aria-label={'Toggle Navigation'}
               />
             </Flex>
-            <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+            <Flex align={'center'} flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
               <Link href={'/home'} _hover={{textDecoration:'none'}}>
                 <Text
                   textAlign={{ base: 'center', md: 'left' }}
@@ -180,8 +181,12 @@ import {
                 </Text>
               </Link>
               <Flex display={loginRoute?'none':'block'}>
-              <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-                <DesktopNav />
+              <Flex align={'center'} display={{ base: 'none', md: 'flex' }} ml={10} gap={4}>
+                {/* <DesktopNav /> */}
+                <Link _hover={{textDecoration:'none'}} as={NavLink} to='/home' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Home</Link>
+                <Link _hover={{textDecoration:'none'}} as={NavLink} to='/resources' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Resources</Link>
+                <Link _hover={{textDecoration:'none'}} as={NavLink} to='/about' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>About</Link>
+                <Link _hover={{textDecoration:'none'}} as={NavLink} to='/contact' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Contact</Link>
               </Flex>
               </Flex>
             </Flex>
@@ -238,18 +243,20 @@ import {
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
               <PopoverTrigger>
-                <Link
+                <NavLink
                   p={2}
-                  href={navItem.href ?? '#'}
+                  to={navItem.href ?? '#'}
                   fontSize={'sm'}
                   fontWeight={500}
                   color={linkColor}
                   _hover={{
                     textDecoration: 'none',
                     color: linkHoverColor,
-                  }}>
+                  }}
+                  active={{bgColor: 'blue'}}
+                  _activeLink={{bgColor:'blue'}}>
                   {navItem.label}
-                </Link>
+                </NavLink>
               </PopoverTrigger>
   
               {navItem.children && (
