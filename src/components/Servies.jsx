@@ -18,6 +18,9 @@ import {
     FcManager,
   } from 'react-icons/fc';
   
+  import { Image } from '@chakra-ui/react'
+import img1 from './../Assets/img1.png';
+
   interface CardProps {
     heading: string;
     description: string;
@@ -28,12 +31,17 @@ import {
   const Card = ({ heading, description, icon, href }: CardProps) => {
     return (
       <Box
+
+      backroung = {img1}
+      
         maxW={{ base: 'full', md: '275px' }}
         w={'full'}
         borderWidth="1px"
         borderRadius="lg"
         overflow="hidden"
         p={5}>
+
+          
         <Stack align={'start'} spacing={2}>
           <Flex
             w={16}
@@ -61,8 +69,14 @@ import {
   
   export default function Servies() {
     return (
-      <Box p={4}>
-        <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
+      <Box p={4} mb={20}
+      // bgImage={img1}
+      // opacity={0.1}
+      >
+       
+        <Stack 
+        
+        spacing={4} mt={6} as={Container} maxW={'3xl'} textAlign={'center'}>
           <Heading fontSize={{ base: '2xl', sm: '4xl' }} fontWeight={'bold'}>
             Our Servies
           </Heading>

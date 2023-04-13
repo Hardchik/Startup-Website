@@ -65,6 +65,7 @@ import {
         
         <Box>
           <Flex
+          // pos="fixed"
             bg={'#9AD7F3'}
             color={'gray.600'}
             minH={'60px'}
@@ -147,9 +148,10 @@ import {
           </HStack>
         </Stack>
       </>):(<>
-        <Box>
+        <Box >
           <Flex
             bg={'#9AD7F3'}
+            pos="fixed" w="100%" zIndex={2} top='0%'
             color={'gray.600'}
             minH={'60px'}
             py={{ base: 2 }}
@@ -171,7 +173,7 @@ import {
                 aria-label={'Toggle Navigation'}
               />
             </Flex>
-            <Flex align={'center'} flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+            <Flex  align={'center'} flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
               <Link href={'/home'} _hover={{textDecoration:'none'}}>
                 <Text
                   textAlign={{ base: 'center', md: 'left' }}
@@ -181,7 +183,8 @@ import {
                 </Text>
               </Link>
               <Flex display={loginRoute?'none':'block'}>
-              <Flex align={'center'} display={{ base: 'none', md: 'flex' }} ml={10} gap={4}>
+
+              <Flex align={'center'} display={{ base: 'none', md: 'flex' }} ml={10} gap={4} >
                 {/* <DesktopNav /> */}
                 <Link _hover={{textDecoration:'none'}} as={NavLink} to='/home' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Home</Link>
                 <Link _hover={{textDecoration:'none'}} as={NavLink} to='/resources' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Resources</Link>
