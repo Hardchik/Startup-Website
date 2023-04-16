@@ -17,6 +17,8 @@ import {
 } from 'react-icons/io5';
 import { ReactElement } from 'react';
 
+import Bg1 from './../Assets/bg1.svg'
+
 interface FeatureProps {
   text: string;
   iconBg: string;
@@ -25,14 +27,19 @@ interface FeatureProps {
 
 const Feature = ({ text, icon, iconBg }: FeatureProps) => {
   return (
-    <Stack direction={'row'} align={'center'}>
+    <Stack direction={'row'} align={'center'}
+    
+    >
       <Flex
         w={8}
         h={8}
         align={'center'}
         justify={'center'}
         rounded={'full'}
-        bg={iconBg}>
+        bg={iconBg}
+        // bgImage={Bg1}
+        
+        >
         {icon}
       </Flex>
       <Text fontWeight={600}>{text}</Text>
@@ -42,7 +49,10 @@ const Feature = ({ text, icon, iconBg }: FeatureProps) => {
 
 export default function About() {
   return (
-    <Container maxW={'5xl'} py={12} mb={24} mt={16}>
+    <>
+
+    <Container maxW={'5xl'} py={12} mb={24} mt={16}
+    >
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
           <Text
@@ -102,5 +112,7 @@ export default function About() {
         </Flex>
       </SimpleGrid>
     </Container>
+
+    </>
   );
 }

@@ -33,7 +33,10 @@ import {
   import { useNavigate, useLocation } from "react-router-dom";
   import { useEffect, useState } from 'react';
  
-  import Home from './../pages/Home';
+import Dlogo from './../Assets/Dlogo1.png'
+import { Image } from '@chakra-ui/react'
+
+  // import Home from './../pages/Home';
   // import About from './../pages/About';
   // import Contact from './../pages/Contact';
 
@@ -80,8 +83,12 @@ import {
                 <Text
                   textAlign={{ base: 'left', md: 'left' }}
                   fontFamily={'heading'}
-                  color={'gray.800'}>
-                  Logo
+                  color={'gray.800'}
+                  w='50px' 
+                  >
+                  <Image 
+                  
+                  src={Dlogo} />
                 </Text>
               </Link>
             </Flex>
@@ -178,8 +185,16 @@ import {
                 <Text
                   textAlign={{ base: 'center', md: 'left' }}
                   fontFamily={'heading'}
-                  color={'gray.800'}>
-                  Logo
+                  color={'gray.800'}
+                  // boxSize='sm'
+                  w='520px' 
+              
+                  >
+                  {/* Logo */}
+                  <Image 
+                  h='80px'
+                  objectFit='cover'
+                  src={Dlogo} />
                 </Text>
               </Link>
               <Flex display={loginRoute?'none':'block'}>
