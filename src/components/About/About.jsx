@@ -26,7 +26,7 @@ function About() {
                 <div className="about-img">
                     <img
                        
-                        src={'https://img.freepik.com/free-photo/medical-banner-with-stethoscope_23-2149611199.jpg'}
+                        src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSUJXuNpP88UbAG9p6JuxnBZu2MNkGcDFrrQ&usqp=CAU'}
                         alt=""
                     />
                 </div>
