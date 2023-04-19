@@ -26,14 +26,14 @@ import {
 } from 'react-icons/md';
 import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
 
-// import Contactpart1 from '../components/Contactpart1';
-
+import HeroImage from '../components/Heroimg'
 
 export default function contact() {
   return (
     <>
   
-  {/* <Contactpart1/> */}
+  <HeroImage heading='CONTACT.' text='Choose your trip.' />
+
     <Container bg="white" maxW="full" mt={16} mb={10} zIndex={-2} centerContent overflow="hidden">
       <Flex>
         <Box

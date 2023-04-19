@@ -15,13 +15,9 @@ export default function Home() {
   return (
     <>
     <Box
-    // background={'blue'}
     bgGradient='linear(red.100 0%, orange.100 25%, yellow.100 50%)'
     >
-
-
-      <Head
-      
+      <Head   
       >
         <link
           href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"

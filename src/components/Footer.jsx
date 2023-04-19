@@ -11,7 +11,7 @@ import {
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { ReactNode } from 'react';
 
-import Dlogo from './../Assets/Dlogo1.png'
+import Dlogo from './../Assets/Dlogo3.png'
 import { Image } from '@chakra-ui/react'
 
 const Logo = (props: any) => {
@@ -78,7 +78,7 @@ export default function Footer() {
         align={'center'}>
         {/* <Logo /> */}
         <Image
-         h='80px'
+         h='40px'
          objectFit='cover'
           src={Dlogo}
          
