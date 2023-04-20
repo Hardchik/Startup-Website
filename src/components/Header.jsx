@@ -76,7 +76,7 @@ import {
             borderColor={'gray.200'}
             align={'center'}>
             <Flex flex={{ base: 1 }} justify={{ base: 'start', md: 'start' }}>
-              <Link href={'/home'} _hover={{textDecoration:'none'}}>
+              <Link href={'/'} _hover={{textDecoration:'none'}}>
                 <Text
                   textAlign={{ base: 'left', md: 'left' }}
                   fontFamily={'heading'}
@@ -121,7 +121,7 @@ import {
 
         <Stack display={loginRoute?'none':'flex'} w={'100vw'} p={5} bottom={0} left={0} opacity={0.7} bgColor={'gray.300'} color={'black'} position={'fixed'}>
           <HStack justify={'space-evenly'}>
-          <Link _hover={{textDecoration:'none'}} href={'/home'}>
+          <Link _hover={{textDecoration:'none'}} href={'/'}>
               <VStack alignContent={'center'}>
                 <BiHome fontSize={'150%'} />
                 <Text fontSize={'70%'}>Home</Text>
@@ -174,7 +174,7 @@ import {
               />
             </Flex>
             <Flex  align={'center'} flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-              <Link href={'/home'} _hover={{textDecoration:'none'}}>
+              <Link href={'/'} _hover={{textDecoration:'none'}}>
                 <Text
                   textAlign={{ base: 'center', md: 'left' }}
                   fontFamily={'heading'}
@@ -186,7 +186,7 @@ import {
 
               <Flex align={'center'} display={{ base: 'none', md: 'flex' }} ml={10} gap={4} >
                 {/* <DesktopNav /> */}
-                <Link _hover={{textDecoration:'none'}} as={NavLink} to='/home' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Home</Link>
+                <Link _hover={{textDecoration:'none'}} as={NavLink} to='/' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Home</Link>
                 <Link _hover={{textDecoration:'none'}} as={NavLink} to='/resources' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Resources</Link>
                 <Link _hover={{textDecoration:'none'}} as={NavLink} to='/about' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>About</Link>
                 <Link _hover={{textDecoration:'none'}} as={NavLink} to='/contact' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Contact</Link>
