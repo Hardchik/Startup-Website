@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useLocation} from 'react-router-dom';
 
-import {Stack, Text, Input, FormLabel, Link, Button, Divider, HStack} from '@chakra-ui/react'
+import {Stack, Text,Image, Input, FormLabel, Link, Button, Divider, HStack} from '@chakra-ui/react'
 
 const Login = () => {
     const location = useLocation();
@@ -14,8 +14,10 @@ const Login = () => {
     },[location.pathname]);
 
     return(<>
-        <Stack display={passRoute?'none':'flex'} h={'94vh'} direction>
-            <Stack w={'30%'} bgColor={'#9AD7F3'}></Stack>
+        <Stack display={passRoute?'none':'flex'} h={'100vh'} direction>
+            <Stack w={'30%'} bgColor={'#9AD7F3'}>
+                {/* <Image w="100%" h="100%" src="https://cdn.pixabay.com/photo/2018/09/27/14/14/analysis-3707159_640.jpg" alt="" /> */}
+            </Stack>
             <Stack w={'70%'} bgColor={'#F3F4F8'} justify={'space-around'} alignItems={'center'}>
                 <Stack w={'30%'} gap={3}>
                     <Text textAlign={'center'} fontSize={'150%'} fontWeight={700}>LOGIN</Text>
