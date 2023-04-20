@@ -15,7 +15,7 @@ function App() {
     <ChakraProvider>
       <BrowserRouter>
         <Routes>
-          <Route path='/home' element={<><Header /><Home /><Footer/></>}></Route>
+          <Route path='/' element={<><Header /><Home /><Footer/></>}></Route>
           {/* <Route path='/dashboard' element={<Dashboard />}></Route> */}
           <Route path='/signin' element={<><Header /><Login /></>}></Route>
           <Route path='/password' element={<><Header /><Login /></>}></Route>

@@ -11,7 +11,7 @@ const Home = () => {
             <Homepgnew />
             <Users />
             <Servies/>
-            <Descriptive />    
+            <Descriptive />
         </>
     );
 }
