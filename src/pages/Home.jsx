@@ -14,12 +14,8 @@ const Home = () => {
             {/* <Homepgnew /> */}
             <Users />
             <Servies/>
-<<<<<<< HEAD
-            <Descriptive />
-=======
             <Descriptive />   
             <Addon/> 
->>>>>>> 663e4926837bc5b4572f00b0c53b939ec101cf84
         </>
     );
 }

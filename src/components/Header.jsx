@@ -41,203 +41,6 @@ import { Image } from '@chakra-ui/react'
 // import Contact from './../pages/Contact';
 
 
-<<<<<<< HEAD
-  export default function WithSubnavigation() {
-    const { isOpen, onToggle } = useDisclosure();
-    const [loginRoute, setLoginRoute] = useState(false);
-    const [window] = useMediaQuery('(max-width: 780px)');
-    const navigate = useNavigate();
-    const SignInHandler = () => {
-      navigate("/signin");
-    }
-
-    const SignUpHandler = () => {
-      navigate("/signup");
-    }
-
-    const location = useLocation();
-    useEffect(()=> {
-      if(location.pathname==='/signin' || location.pathname === '/signup' || location.pathname === '/password') {
-        setLoginRoute(true)
-      }
-    }, [location]);
-
-
-    return (
-      <>
-      {window?(<>
-        
-        <Box>
-          <Flex
-          // pos="fixed"
-            bg={'#9AD7F3'}
-            color={'gray.600'}
-            minH={'60px'}
-            py={{ base: 2 }}
-            px={{ base: 4 }}
-            borderBottom={1}
-            borderStyle={'solid'}
-            borderColor={'gray.200'}
-            align={'center'}>
-            <Flex flex={{ base: 1 }} justify={{ base: 'start', md: 'start' }}>
-              <Link href={'/'} _hover={{textDecoration:'none'}}>
-                <Text
-                  textAlign={{ base: 'left', md: 'left' }}
-                  fontFamily={'heading'}
-                  color={'gray.800'}>
-                  Logo
-                </Text>
-              </Link>
-            </Flex>
-            <Stack
-              display={loginRoute?'none':'flex'}
-              flex={{ base: 1, md: 0 }}
-              justify={'flex-end'}
-              direction={'row'}
-              spacing={6}>
-              <Button
-                as={'a'}
-                fontSize={'sm'}
-                fontWeight={400}
-                variant={'link'}
-                href={'#'}
-                onClick={SignInHandler}>
-                Sign In
-              </Button>
-              <Button
-                as={'a'}
-                display={{ base: 'none', md: 'inline-flex' }}
-                fontSize={'sm'}
-                fontWeight={600}
-                color={'white'}
-                bg={'pink.400'}
-                href={'#'}
-                _hover={{
-                  bg: 'pink.300',
-                }}
-                onClick={SignUpHandler}>
-                Sign Up
-              </Button>
-            </Stack>
-          </Flex>
-        </Box>
-        
-
-        <Stack display={loginRoute?'none':'flex'} w={'100vw'} p={5} bottom={0} left={0} opacity={0.7} bgColor={'gray.300'} color={'black'} position={'fixed'}>
-          <HStack justify={'space-evenly'}>
-          <Link _hover={{textDecoration:'none'}} href={'/'}>
-              <VStack alignContent={'center'}>
-                <BiHome fontSize={'150%'} />
-                <Text fontSize={'70%'}>Home</Text>
-              </VStack>
-            </Link>
-            <Link _hover={{textDecoration:'none'}} href={'/dashboard'}>
-              <VStack>
-                <MdDashboard fontSize={'150%'} />
-                <Text fontSize={'70%'}>Dashboard</Text>
-              </VStack>
-            </Link>
-            <Link _hover={{textDecoration:'none'}} href={'/about'}>
-            <VStack>
-                <HiOutlineNewspaper fontSize={'150%'}/>
-                <Text fontSize={'70%'}>About</Text>
-              </VStack>
-            </Link>
-            <Link _hover={{textDecoration:'none'}} href={'/contact'}> 
-              <VStack>
-                <GrContact fontSize={'150%'} />
-                <Text fontSize={'70%'}>Contact</Text>
-              </VStack>
-            </Link>
-          </HStack>
-        </Stack>
-      </>):(<>
-        <Box >
-          <Flex
-            bg={'#9AD7F3'}
-            pos="fixed" w="100%" zIndex={2} top='0%'
-            color={'gray.600'}
-            minH={'60px'}
-            py={{ base: 2 }}
-            px={{ base: 4 }}
-            borderBottom={1}
-            borderStyle={'solid'}
-            borderColor={'gray.200'}
-            align={'center'}>
-            <Flex
-              flex={{ base: 1, md: 'auto' }}
-              ml={{ base: -2 }}
-              display={{ base: 'flex', md: 'none' }}>
-              <IconButton
-                onClick={onToggle}
-                icon={
-                  isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-                }
-                variant={'ghost'}
-                aria-label={'Toggle Navigation'}
-              />
-            </Flex>
-            <Flex  align={'center'} flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-              <Link href={'/'} _hover={{textDecoration:'none'}}>
-                <Text
-                  textAlign={{ base: 'center', md: 'left' }}
-                  fontFamily={'heading'}
-                  color={'gray.800'}>
-                  Logo
-                </Text>
-              </Link>
-              <Flex display={loginRoute?'none':'block'}>
-
-              <Flex align={'center'} display={{ base: 'none', md: 'flex' }} ml={10} gap={4} >
-                {/* <DesktopNav /> */}
-                <Link _hover={{textDecoration:'none'}} as={NavLink} to='/' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Home</Link>
-                <Link _hover={{textDecoration:'none'}} as={NavLink} to='/resources' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Resources</Link>
-                <Link _hover={{textDecoration:'none'}} as={NavLink} to='/about' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>About</Link>
-                <Link _hover={{textDecoration:'none'}} as={NavLink} to='/contact' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Contact</Link>
-              </Flex>
-              </Flex>
-            </Flex>
-    
-            <Stack
-              display={loginRoute?'none':'flex'}
-              flex={{ base: 1, md: 0 }}
-              justify={'flex-end'}
-              direction={'row'}
-              spacing={6}>
-              <Button
-                as={'a'}
-                fontSize={'sm'}
-                fontWeight={400}
-                variant={'link'}
-                href={'#'}
-                onClick={SignInHandler}>
-                Sign In
-              </Button>
-              <Button
-                as={'a'}
-                display={{ base: 'none', md: 'inline-flex' }}
-                fontSize={'sm'}
-                fontWeight={600}
-                color={'gray.500'}
-                bg={'white'}
-                href={'#'}
-                _hover={{
-                  bg: 'pink.300',
-                }}
-                onClick={SignUpHandler}>
-                Sign Up
-              </Button>
-            </Stack>
-          </Flex>
-    
-          <Collapse in={isOpen} animateOpacity>
-            <MobileNav />
-          </Collapse>
-        </Box>
-      </>)}
-      </>
-    );
-=======
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const [loginRoute, setLoginRoute] = useState(false);
@@ -245,7 +48,6 @@ export default function WithSubnavigation() {
   const navigate = useNavigate();
   const SignInHandler = () => {
     navigate("/signin");
->>>>>>> 663e4926837bc5b4572f00b0c53b939ec101cf84
   }
 
   const SignUpHandler = () => {
@@ -277,7 +79,7 @@ export default function WithSubnavigation() {
           borderColor={'gray.200'}
           align={'center'}>
           <Flex flex={{ base: 1 }} justify={{ base: 'start', md: 'start' }}>
-            <Link href={'/home'} _hover={{textDecoration:'none'}}>
+            <Link href={'/'} _hover={{textDecoration:'none'}}>
               <Text
                 textAlign={{ base: 'left', md: 'left' }}
                 fontFamily={'heading'}
@@ -327,7 +129,7 @@ export default function WithSubnavigation() {
 
       <Stack display={loginRoute?'none':'flex'} w={'100vw'} p={5} bottom={0} left={0} opacity={0.7} bgColor={'gray.300'} color={'black'} position={'fixed'}>
         <HStack justify={'space-evenly'}>
-        <Link _hover={{textDecoration:'none'}} href={'/home'}>
+        <Link _hover={{textDecoration:'none'}} href={'/'}>
             <VStack alignContent={'center'}>
               <BiHome fontSize={'150%'} />
               <Text fontSize={'70%'}>Home</Text>
@@ -380,7 +182,7 @@ export default function WithSubnavigation() {
             />
           </Flex>
           <Flex  align={'center'} flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Link href={'/home'} _hover={{textDecoration:'none'}}>
+            <Link href={'/'} _hover={{textDecoration:'none'}}>
               <Text
                 textAlign={{ base: 'center', md: 'left' }}
                 fontFamily={'heading'}
@@ -400,7 +202,7 @@ export default function WithSubnavigation() {
 
             <Flex align={'center'} display={{ base: 'none', md: 'flex' }} ml={10} gap={4} >
               {/* <DesktopNav /> */}
-              <Link _hover={{textDecoration:'none'}} as={NavLink} to='/home' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Home</Link>
+              <Link _hover={{textDecoration:'none'}} as={NavLink} to='/' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Home</Link>
               <Link _hover={{textDecoration:'none'}} as={NavLink} to='/resources' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Resources</Link>
               <Link _hover={{textDecoration:'none'}} as={NavLink} to='/about' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>About</Link>
               <Link _hover={{textDecoration:'none'}} as={NavLink} to='/contact' _activeLink={{bgColor:'#48B7EA', p:2, rounded:'md'}}>Contact</Link>
