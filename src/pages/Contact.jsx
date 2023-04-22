@@ -27,14 +27,19 @@ import {
 import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
 
 import HeroImage from '../components/Heroimg'
+import Dotline from '../components/Dotline';
+
 
 export default function contact() {
   return (
     <>
   
-  <HeroImage heading='CONTACT.' text='Choose your trip.' />
+  <HeroImage heading='CONTACT.' 
+  // text='Choose your trip.'
+   />
 
     <Container bg="white" maxW="full" mt={16} mb={10} zIndex={-2} centerContent overflow="hidden">
+  <Dotline/>
       <Flex>
         <Box
           bg="#02054B"

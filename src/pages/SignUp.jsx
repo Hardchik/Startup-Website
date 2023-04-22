@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {Stack, Text, Button, Avatar, Wrap, Link, Divider, HStack, FormLabel, Input} from '@chakra-ui/react';
+import {Stack, Text,Image, Button, Avatar, Wrap, Link, Divider, HStack, FormLabel, Input} from '@chakra-ui/react';
+import Signupimg from './../Assets/loginimg2.png'
+
 
 const SignUp = () => {
     const [step, setStep] = useState(0);
@@ -55,8 +57,11 @@ const SignUp = () => {
                 </Stack>
         </Stack>
         </>):(<>
-            <Stack h={'94vh'} direction>
-            <Stack w={'30%'} bgColor={'#9AD7F3'}></Stack>
+            <Stack h={'120vh'} direction>
+            <Stack w={'30%'} bgColor={'#9AD7F3'}>
+            <Image w="100%" h="100%" src={Signupimg} alt="" />
+            </Stack>
+
             <Stack w={'70%'} bgColor={'#F3F4F8'} justify={'space-around'} alignItems={'center'}>
                 <Stack w={'30%'} gap={1}>
                     <Text textAlign={'center'} fontSize={'150%'} fontWeight={700}>SignUp</Text>

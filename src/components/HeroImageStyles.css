@@ -7,7 +7,8 @@
 
 .hero-img:before {
     content:'';
-    background: url('https://thumbs.dreamstime.com/b/health-medical-insurance-life-whole-family-concept-practitioner-doctor-protective-gesture-icon-103341022.jpg') no-repeat center center/cover;
+    /* background: url('https://thumbs.dreamstime.com/b/health-medical-insurance-life-whole-family-concept-practitioner-doctor-protective-gesture-icon-103341022.jpg') no-repeat center center/cover; */
+    background: url('./../Assets/topimg.png') no-repeat center center/cover;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -26,7 +27,9 @@
 }
 
 .hero-img h1 {
-    font-size: 2.4rem;
+    font-size: 3.4rem;
+    color: #fff;
+    font-weight: bold;
 }
 
 .hero-img p {

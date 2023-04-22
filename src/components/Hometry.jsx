@@ -38,6 +38,7 @@ export default function Hometry() {
 }
 
 const Section = styled.section`
+z-index:-333;
   position: relative;
   margin-top: 2rem;
   width: 100%;
