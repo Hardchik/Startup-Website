@@ -68,7 +68,9 @@ export default function Footer() {
   return (
     <Box
       bg={'#9AD7F3'}
-      color={'gray.500'}>
+      color={'gray.500'}
+      borderTopRadius={40}
+      >
       <Container
         as={Stack}
         maxW={'6xl'}
@@ -103,7 +105,7 @@ export default function Footer() {
           spacing={4}
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}>
-          <Text>© 2022 Chakra Templates. All rights reserved</Text>
+          <Text>© 2023 Diagnoos. All rights reserved</Text>
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Twitter'} href={'#'}>
               <FaTwitter />

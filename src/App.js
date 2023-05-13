@@ -1,6 +1,7 @@
-import * as React from 'react';
+import * as React  from 'react';
+import { useEffect, useState } from "react";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, Img } from '@chakra-ui/react';
 import Header from './components/Header.jsx';
 import Resources from './pages/Resources';
 import About from './pages/About';
@@ -10,9 +11,48 @@ import Home from './pages/Home';
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Dashboard from './pages/Dashboard';
+import Preloader from './Assets/D.mp4';
+import Aa from './Assets/Dlogo.png';
+import './App.css'
+import { ThreeCircles } from "react-loader-spinner";
+
 
 function App() {
+
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+
   return (
+    <> 
+    {loading ? (
+        // <video className='loader' src={Preloader}  />
+        // <img  className='loader' src={Aa} />
+        
+        // />
+        <div className="placeLoader">
+        <ThreeCircles
+        backgroundColor='black'
+          color='black'
+          height="100"
+          width="100"
+          // color="white"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor=""
+          innerCircleColor=""
+          middleCircleColor=""
+        />
+      </div>
+      ):(
     <ChakraProvider>
       <BrowserRouter>
         <Routes>
@@ -26,8 +66,11 @@ function App() {
           <Route path='/about' element={<><Header /><About /><Footer/></>}></Route>
         </Routes>
       </BrowserRouter>
+
     </ChakraProvider>
-  )
+      )}
+    </> 
+  );
 }
 
 export default App;

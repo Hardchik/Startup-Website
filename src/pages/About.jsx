@@ -5,18 +5,19 @@ import Servies from '../components/Servies';
 
 import HeroImage from '../components/Heroimg'
 import Ab from '../components/About/About'
+import Newabout from '../components/About/Newabout'
 import Addon from './../components/Addon';
 import Team from '../components/Team/Teams'
+
 
 const About = () => {
     return(
     <>
-    <HeroImage heading='ABOUT.' 
-    // text='Choose your trip.' 
-    />
+    <HeroImage heading='ABOUT.'  />
+
+    <Newabout/>
     <Ab/>
     <Addon/> 
-    {/* <Aboutus/> */}
     <Servies/>  
     <Team/>  
     </>
